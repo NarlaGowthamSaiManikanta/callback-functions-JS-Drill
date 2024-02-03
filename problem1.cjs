@@ -14,6 +14,7 @@ function deleteJSONFile(filePath) {
         if (err) {
             throw err;
         }
+        
         console.log(`${filePath} file deleted`);
     });
 }
@@ -25,7 +26,9 @@ function createJSONFileWithCallBackOption(filePath, data, cb) {
                 if (err) {
                     throw err;
                 }
-                console.log(`${filePath} file created.`)
+
+                console.log(`${filePath} file created.`);
+
                 if (cb) {
                     cb(filePath);
                 }
