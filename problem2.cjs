@@ -19,7 +19,7 @@ function readingFileData(directory, filename, encoding) {
 
             console.log(`${filePath} is read successful`);
 
-            data = data.toUpperCase(); 
+            data = data.toUpperCase();
             writingFile(directory, `upper_${filename}`, data, readingUpperCaseFileData);
         });
     } else {
@@ -83,9 +83,9 @@ function readingLowerCaseFileData(directory, filename, encoding) {
 
 function sortingSentences(sentences, directory, filename) {
     data = sentences.sort()
-    .reduce((accumulator, sentence) => {
-        return accumulator + '\n' +sentence;
-    });
+        .reduce((accumulator, sentence) => {
+            return accumulator + '\n' + sentence;
+        });
     writingFile(directory, `sorted_${filename}`, data, deleteCreatedFiles);
 }
 
@@ -99,8 +99,8 @@ function deleteCreatedFiles(directory, filename, encoding) {
 
         data = data.split('\n').slice(0, -1);
         data.push(filenamesFilePath.slice(5));
-        
-            data.forEach((fileName) => {
+
+        data.forEach((fileName) => {
             let filePath = 'data/' + fileName;
             fs.unlink(filePath, (err) => {
                 if (err) {
