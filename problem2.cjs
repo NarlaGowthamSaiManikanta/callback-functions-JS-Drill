@@ -6,13 +6,13 @@ function readingFile(directory, filename, encoding) {
             if (!directory) {
                 directory = '.';
             }
-    
+
             let filePath = `${directory}/${filename}`;
-    
+
             if (!encoding) {
                 encoding = 'utf-8';
             }
-    
+
             fs.readFile(filePath, encoding, (err, data) => {
                 if (err) {
                     reject(err);
@@ -76,7 +76,7 @@ function deleteCreatedFiles(directory, encoding) {
             if (data[data.length - 1] === '') {
                 data = data.slice(0, -1);
             }
-            data.push(filenamesFilePath.slice(directory.length+1));
+            data.push(filenamesFilePath.slice(directory.length + 1));
 
             data.forEach((fileName) => {
                 let filePath = `${directory}/${fileName}`;
@@ -94,5 +94,5 @@ function deleteCreatedFiles(directory, encoding) {
 }
 
 module.exports = {
-    readingFile, writingFile, splitingIntoSentences, sortingSentences ,deleteCreatedFiles
+    readingFile, writingFile, splitingIntoSentences, sortingSentences, deleteCreatedFiles
 };
