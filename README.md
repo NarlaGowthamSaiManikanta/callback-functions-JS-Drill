@@ -13,7 +13,7 @@
         └── .gitignore
 
 ## Problem Description
-Using callbacks and the fs module's asynchronous functions, do the following:
+Using promises and the fs module's asynchronous functions, do the following:
 
 * Problem 1:
    1. Create a directory of random JSON files
